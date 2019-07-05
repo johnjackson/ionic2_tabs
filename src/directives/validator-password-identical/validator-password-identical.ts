@@ -13,7 +13,7 @@ export class ValidatorPasswordIdenticalDirective implements Validator {
 
   validate(control: FormGroup): { [key: string]: any } | null {
     const password = control.get('password');
-    const newPassword = control.get('newPassword');
+    const newPassword = control.get('password2');
     return password && newPassword && password.value === newPassword.value ? null : {'passwordInvalid': true};
   }
 
